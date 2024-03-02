@@ -20,9 +20,15 @@ printAndPause([200, 800, 200, 800, 200, 800])
 // pause 800ms
 
 ***********************************************************************/
-
+debugger
 function printAndPause(nums) {
-  // Your code here 
+  if ( nums.length === 0 ) return [];
+
+  console.log(nums[0]);
+
+  setTimeout(() => {
+    return printAndPause(nums.splice(1));
+  }, nums[0]);
 }
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
